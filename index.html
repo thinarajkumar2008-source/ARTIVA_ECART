@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artiva — Paintings & Clay Art</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f5efe6;
+      color: #302820;
+      overflow-x: hidden;
+    }
+
+    /* Left hover navigation */
+    .nav-trigger {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 54px;
+      height: 120px;
+      border-radius: 0 22px 22px 0;
+      background: #2d2925;
+      color: #fff;
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 5px 8px 25px rgba(0,0,0,.18);
+      cursor: pointer;
+    }
+    .dots { display: flex; flex-direction: column; gap: 6px; }
+    .dots span { width: 5px; height: 5px; background: #e6b96a; border-radius: 50%; }
+
+    .side-nav {
+      position: fixed;
+      top: 0;
+      left: -270px;
+      width: 270px;
+      height: 100vh;
+      background: rgba(39,35,31,.97);
+      z-index: 1000;
+      padding: 45px 30px;
+      transition: left .35s ease;
+      box-shadow: 8px 0 35px rgba(0,0,0,.2);
+    }
+    .side-nav.open, .nav-trigger:hover + .side-nav, .side-nav:hover { left: 0; }
+    .brand { color: #e6b96a; font-size: 28px; margin-bottom: 55px; letter-spacing: 2px; }
+    .side-nav a {
+      display: block;
+      color: #f5efe6;
+      text-decoration: none;
+      font-size: 19px;
+      padding: 16px 8px;
+      border-bottom: 1px solid rgba(255,255,255,.09);
+      transition: .25s;
+    }
+    .side-nav a:hover { color: #e6b96a; padding-left: 17px; }
+    .submenu-toggle{width:100%;border:0;border-bottom:1px solid rgba(255,255,255,.09);background:transparent;color:#f5efe6;text-align:left;font:inherit;font-size:19px;padding:16px 8px;cursor:pointer;display:flex;justify-content:space-between;transition:.25s}.submenu-toggle:hover{color:#e6b96a;padding-left:17px}.submenu-toggle span{color:#e6b96a}.clay-submenu{max-height:0;overflow:hidden;transition:max-height .35s ease}.clay-submenu.open{max-height:260px}.clay-submenu a{font-size:15px;padding:11px 8px 11px 25px;color:#cfc3b7;border:0}.clay-submenu a:hover{padding-left:34px}
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 70px 8%;
+      position: relative;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(204,139,83,.22), transparent 27%),
+        radial-gradient(circle at 10% 80%, rgba(100,78,61,.12), transparent 25%),
+        #f5efe6;
+    }
+    .hero-content { max-width: 900px; text-align: center; }
+    .eyebrow { text-transform: uppercase; letter-spacing: 5px; font-size: 13px; color: #8c6545; }
+    h1 { font-size: clamp(55px, 9vw, 110px); line-height: .9; margin: 20px 0; font-weight: 500; }
+    h1 em { color: #9b603e; }
+    .hero p { max-width: 650px; margin: 25px auto; font-family: Arial, sans-serif; color: #6d6258; line-height: 1.8; }
+    .hero-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 14px 28px;
+      background: #302820;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-family: Arial, sans-serif;
+      transition: .25s;
+    }
+    .hero-btn:hover { background: #9b603e; transform: translateY(-2px); }
+
+    section { padding: 100px 8%; }
+    .section-head { margin-bottom: 45px; }
+    .section-head small { color: #9b603e; text-transform: uppercase; letter-spacing: 3px; font-family: Arial, sans-serif; }
+    .section-head h2 { font-size: 52px; font-weight: 500; margin-top: 8px; }
+
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .card {
+      background: #fffaf3;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(62,43,28,.08);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(62,43,28,.15); }
+    .art-image {
+      height: 310px;
+      display: grid;
+      place-items: center;
+      font-size: 80px;
+      color: rgba(255,255,255,.9);
+    }
+    .paint1 { background: linear-gradient(135deg,#7b4a3b,#d19a65,#e8c38e); }
+    .paint2 { background: linear-gradient(135deg,#34495e,#718c8c,#d7b98c); }
+    .paint3 { background: linear-gradient(135deg,#603d52,#b66b72,#e7b56d); }
+    .clay1 { background: linear-gradient(135deg,#8a5037,#c7825a,#e2ad7b); }
+    .clay2 { background: linear-gradient(135deg,#5b514b,#9e8069,#d2a982); }
+    .clay3 { background: linear-gradient(135deg,#76513c,#b98258,#e1bf9d); }
+    .card-info { padding: 22px; }
+    .card-info h3 { font-size: 25px; font-weight: 500; }
+    .card-info p { margin-top: 8px; color: #7b7066; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5; }
+
+    #about { background: #302820; color: #f5efe6; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .about-grid h2 { font-size: 55px; font-weight: 500; }
+    .about-grid p { color: #d4c9be; line-height: 1.9; font-family: Arial, sans-serif; }
+    .quote { border-left: 3px solid #e6b96a; padding-left: 25px; font-style: italic; font-size: 25px; line-height: 1.5; }
+
+    #contact { text-align: center; }
+    .contact-box { max-width: 700px; margin: auto; }
+    .contact-box p { font-family: Arial, sans-serif; color: #756b61; line-height: 1.8; margin: 18px 0 30px; }
+    footer { padding: 30px; text-align: center; background: #211e1b; color: #aaa; font-family: Arial, sans-serif; font-size: 13px; }
+
+    @media (max-width: 800px) {
+      .art-grid, .about-grid { grid-template-columns: 1fr; }
+      .art-image { height: 250px; }
+      section { padding: 75px 6%; }
+      .section-head h2, .about-grid h2 { font-size: 40px; }
+    }
+    @media (hover: none) {
+      .nav-trigger:active + .side-nav { left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-trigger" id="navTrigger" aria-label="Open navigation">
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+
+  <nav class="side-nav" id="sideNav">
+    <div class="brand">ARTIVA</div>
+    <a href="#home">Home</a>
+    <a href="#art">Art</a>
+    <a href="#paintings">Paintings</a>
+    <button class="submenu-toggle" id="clayToggle" type="button">Clay Art <span>⌄</span></button>
+    <div class="clay-submenu" id="claySubmenu">
+      <a href="#clay-small">Small</a><a href="#clay-anime">Anime</a><a href="#clay-cartoon">Cartoon</a><a href="#clay-kechain">Keychain</a><a href="#clay-pencil">Pen & Pencil Designer</a>
+    </div>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">A little gallery of imagination</div>
+        <h1>Art is the <em>language</em><br>of the soul.</h1>
+        <p>Welcome to Artiva — a calm little space for paintings, drawings and handmade clay creations. Explore colors, textures and ideas made by hand.</p>
+        <a class="hero-btn" href="#art">Explore the collection</a>
+      </div>
+    </section>
+
+    <section id="art">
+      <div class="section-head">
+        <small>01 — The collection</small>
+        <h2>Featured Art</h2>
+      </div>
+      <div class="art-grid">
+        <article class="card">
+          <div class="art-image paint1">🎨</div>
+          <div class="card-info"><h3>Warm Horizons</h3><p>An expressive study of earthy tones and sunset light.</p></div>
+        </article>
+        <article class="card">
+          <div class="art-image paint2">🖌️</div>
+          <div class="card-info"><h3>Quiet Blue</h3><p>A peaceful abstract composition inspired by nature.</p></div>
+        </article>
+        <article class="card">
+          <div class="art-image paint3">✦</div>
+          <div class="card-info"><h3>Dreamscape</h3><p>A playful painting where imagination takes the lead.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="paintings">
+      <div class="section-head">
+        <small>02 — Brush & canvas</small>
+        <h2>Paintings</h2>
+      </div>
+      <div class="art-grid">
+        <article class="card">
+          <div class="art-image paint2">🌙</div>
+          <div class="card-info"><h3>Moonlit Story</h3><p>Soft shapes and layered colors creating a quiet evening mood.</p></div>
+        </article>
+        <article class="card">
+          <div class="art-image paint1">🌅</div>
+          <div class="card-info"><h3>Golden Morning</h3><p>A warm landscape inspired by early morning light.</p></div>
+        </article>
+        <article class="card">
+          <div class="art-image paint3">🌸</div>
+          <div class="card-info"><h3>Floral Notes</h3><p>Loose strokes and gentle forms inspired by flowers.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="clay"><div class="section-head"><small>03 — Made by hand</small><h2>Clay Art</h2></div><div class="art-grid">
+      <article class="card" id="clay-small"><div class="art-image clay1">🏺</div><div class="card-info"><h3>Small</h3><p>Mini handmade clay creations and cute decorative pieces.</p></div></article>
+      <article class="card" id="clay-anime"><div class="art-image clay2">✨</div><div class="card-info"><h3>Anime</h3><p>Handmade clay characters inspired by anime creativity.</p></div></article>
+      <article class="card" id="clay-cartoon"><div class="art-image clay3">😄</div><div class="card-info"><h3>Cartoon</h3><p>Fun and colorful cartoon-style clay characters.</p></div></article>
+      <article class="card" id="clay-kechain"><div class="art-image clay1">🔑</div><div class="card-info"><h3>Keychain</h3><p>Personalized clay keychains for bags, keys and gifts.</p></div></article>
+      <article class="card" id="clay-pencil"><div class="art-image clay2">✏️</div><div class="card-info"><h3>Pen & Pencil Designer</h3><p>Creative clay decorations and handmade pen and pencil designs.</p></div></article>
+    </div></section>
+
+    <section id="about">
+      <div class="about-grid">
+        <div>
+          <small style="color:#e6b96a;letter-spacing:3px;">04 — OUR STORY</small>
+          <h2>Made with patience.<br>Created with feeling.</h2>
+        </div>
+        <div>
+          <p>Artiva is a personal art gallery concept designed to bring paintings, drawings and clay art together in one beautiful digital space.</p>
+          <br>
+          <div class="quote">“Every blank surface is an invitation to create something that did not exist before.”</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <div class="section-head">
+          <small>05 — Say hello</small>
+          <h2>Let's create something.</h2>
+        </div>
+        <p>Have an artwork to showcase or an idea for a creative project? This section can later be connected to a real contact form or backend.</p>
+        <a class="hero-btn" href="mailto:hello@artiva.example">Contact the artist</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Artiva — Paintings, Drawings & Clay Art</footer>
+
+  <script>
+    const trigger = document.getElementById("navTrigger");
+    const nav = document.getElementById("sideNav");
+    const clayToggle = document.getElementById("clayToggle");
+    const claySubmenu = document.getElementById("claySubmenu");
+
+    clayToggle.addEventListener("click", (e) => { e.stopPropagation(); claySubmenu.classList.toggle("open"); clayToggle.querySelector("span").textContent = claySubmenu.classList.contains("open") ? "⌃" : "⌄"; });
+
+    trigger.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+
+    document.querySelectorAll(".side-nav a").forEach(link => {
+      link.addEventListener("click", () => nav.classList.remove("open"));
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!nav.contains(e.target) && !trigger.contains(e.target)) {
+        nav.classList.remove("open");
+      }
+    });
+  </script>
+</body>
+</html>
