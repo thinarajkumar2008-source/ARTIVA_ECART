@@ -158,6 +158,40 @@ const Home = () => {
         </div>
       </section>
 
+      {/* ================= GALLERY TRANSITION RIBBON ================= */}
+      <div className="gallery-ribbon-ticker" aria-hidden="true">
+        <div className="gallery-ribbon-track">
+          {[...Array(2)].map((_, loopIdx) => (
+            <React.Fragment key={loopIdx}>
+              <span className="ribbon-item">
+                <span>Original Canvas Paintings</span>
+                <span className="ribbon-dot">✦</span>
+              </span>
+              <span className="ribbon-item">
+                <span>Handcrafted Clay Miniatures</span>
+                <span className="ribbon-dot">✦</span>
+              </span>
+              <span className="ribbon-item">
+                <span>Botanical Ink & Pencil Drawings</span>
+                <span className="ribbon-dot">✦</span>
+              </span>
+              <span className="ribbon-item">
+                <span>Chibi Anime Sculptures</span>
+                <span className="ribbon-dot">✦</span>
+              </span>
+              <span className="ribbon-item">
+                <span>Artisan Keychains</span>
+                <span className="ribbon-dot">✦</span>
+              </span>
+              <span className="ribbon-item">
+                <span>Designer Desk Stationery</span>
+                <span className="ribbon-dot">✦</span>
+              </span>
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+
       {/* ================= 2. TRUST AND SERVICE BENEFITS STRIP ================= */}
       <section className="benefits-section" aria-label="Why Choose ARTIVA">
         <div className="container benefits-grid">
@@ -203,7 +237,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ================= 3. SHOP BY CATEGORY ================= */}
+      {/* ================= 3. SHOP BY CATEGORY (ASYMMETRIC MOSAIC) ================= */}
       <section className="section-wrapper">
         <div className="container">
           <div className="section-header">
@@ -220,21 +254,31 @@ const Home = () => {
             </Link>
           </div>
 
-          <div className="category-grid">
-            {CATEGORIES.map((cat) => (
-              <CategoryCard key={cat.id} category={cat} />
-            ))}
+          <div className="category-mosaic-grid">
+            {CATEGORIES.map((cat, idx) => {
+              let colClass = 'category-mosaic-item-standard';
+              if (idx === 0 || idx === 1) {
+                colClass = 'category-mosaic-item-featured';
+              } else if (idx === 5 || idx === 6) {
+                colClass = 'category-mosaic-item-wide';
+              }
+              return (
+                <div key={cat.id} className={colClass}>
+                  <CategoryCard category={cat} />
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* ================= 4. FEATURED COLLECTIONS: ARTWORKS WORTH FALLING FOR ================= */}
+      {/* ================= 4. FEATURED COLLECTIONS: ART THAT SPEAKS TO YOU ================= */}
       <section className="section-wrapper featured-spotlight-section">
         <div className="container">
           <div className="section-header">
             <div className="section-title-wrap">
               <span className="section-tag text-gold">Curator's Spotlight</span>
-              <h2 className="section-title font-editorial">Artworks Worth Falling For</h2>
+              <h2 className="section-title font-editorial">Art That Speaks to You</h2>
               <p className="section-desc">
                 Hand-selected masterwork canvases and intricate handmade clay pieces that transform any space.
               </p>
@@ -304,13 +348,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ================= 5. BESTSELLERS: MOST LOVED CREATIONS ================= */}
+      {/* ================= 5. BESTSELLERS: MOST-LOVED CREATIONS ================= */}
       <section className="section-wrapper bestsellers-section">
         <div className="container">
           <div className="section-header">
             <div className="section-title-wrap">
               <span className="section-tag" style={{ color: 'var(--royal-violet)' }}>Community Favorites</span>
-              <h2 className="section-title font-editorial">Most Loved Creations</h2>
+              <h2 className="section-title font-editorial">Most-Loved Creations</h2>
               <p className="section-desc">
                 The most cherished paintings, drawings, and desk toppers across the ARTIVA community.
               </p>
@@ -329,7 +373,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ================= 6. BRAND STORYTELLING: EVERY CREATION HAS A STORY ================= */}
+      {/* ================= 6. BRAND STORYTELLING: MADE WITH IMAGINATION. COLLECTED WITH LOVE. ================= */}
       <section className="section-wrapper brand-story-section">
         <div className="container">
           <div className="brand-story-grid">
@@ -354,7 +398,7 @@ const Home = () => {
             {/* Emotional Narrative Copy */}
             <div className="brand-story-text">
               <span className="section-tag text-gold">Our Creative Purpose</span>
-              <h2 className="brand-story-title font-editorial">Every Creation Has a Story</h2>
+              <h2 className="brand-story-title font-editorial">Made with Imagination. Collected with Love.</h2>
               <p className="brand-story-lead">
                 ARTIVA was founded on a simple belief: that genuine, handmade artwork possesses an emotional soul that mass-produced décor can never replicate.
               </p>

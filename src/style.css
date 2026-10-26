@@ -1,34 +1,37 @@
 /* =========================================================
-   ARTIVA — COMPLETE LUXURY DESIGN SYSTEM
+   ARTIVA — AWARD-WINNING CREATIVE ART MARKETPLACE SYSTEM
    Brand Palette:
-   - Deep midnight plum: #251638
-   - Royal violet: #6428D9
-   - Electric lavender: #A66BFF
-   - Warm ivory: #FFFCF7
-   - Soft blush: #FFF0F3
-   - Champagne gold: #D9B779
-   - Muted slate: #777386
-   - Pure white: #FFFFFF
+   - Midnight plum: #21142F
+   - Royal violet: #6829D9
+   - Electric lavender: #AD83FF
+   - Warm gallery ivory: #FFFBF5
+   - Soft blush: #FCE8EE
+   - Champagne gold: #D7B778
+   - Charcoal: #292533
+   - Muted lavender-gray: #827B91
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Luxury Palette Tokens */
-  --midnight-plum: #251638;
-  --midnight-plum-dark: #190e27;
-  --royal-violet: #6428D9;
-  --royal-violet-hover: #531ebd;
-  --royal-violet-light: rgba(100, 40, 217, 0.08);
-  --royal-violet-glow: rgba(100, 40, 217, 0.22);
-  --electric-lavender: #A66BFF;
-  --electric-lavender-light: rgba(166, 107, 255, 0.12);
-  --warm-ivory: #FFFCF7;
-  --soft-blush: #FFF0F3;
-  --champagne-gold: #D9B779;
-  --champagne-gold-hover: #C5A15E;
-  --champagne-gold-light: rgba(217, 183, 121, 0.18);
-  --muted-slate: #777386;
+  /* Award-Winning Luxury Palette Tokens */
+  --midnight-plum: #21142F;
+  --midnight-plum-dark: #160b21;
+  --royal-violet: #6829D9;
+  --royal-violet-hover: #551ec0;
+  --royal-violet-light: rgba(104, 41, 217, 0.08);
+  --royal-violet-glow: rgba(104, 41, 217, 0.25);
+  --electric-lavender: #AD83FF;
+  --electric-lavender-light: rgba(173, 131, 255, 0.12);
+  --warm-ivory: #FFFBF5;
+  --warm-gallery-ivory: #FFFBF5;
+  --soft-blush: #FCE8EE;
+  --champagne-gold: #D7B778;
+  --champagne-gold-hover: #C4A261;
+  --champagne-gold-light: rgba(215, 183, 120, 0.18);
+  --charcoal: #292533;
+  --muted-slate: #827B91;
+  --muted-lavender-gray: #827B91;
   --pure-white: #FFFFFF;
 
   /* Theme System Mappings */
@@ -42,22 +45,24 @@
   --yellow: var(--champagne-gold);
   --mint: #8BE0C4;
   --mint-dark: #2A9D8F;
-  --bg-light: var(--warm-ivory);
+  --bg-light: var(--warm-gallery-ivory);
   --bg-white: var(--pure-white);
-  --text-main: var(--midnight-plum);
-  --text-secondary: var(--muted-slate);
-  --text-muted: #9C98AA;
-  --border-color: #EFE7DE;
-  --border-light: #F7F1EB;
-  --border-gold: rgba(217, 183, 121, 0.35);
+  --text-main: var(--charcoal);
+  --text-secondary: var(--muted-lavender-gray);
+  --text-muted: #9E97AA;
+  --border-color: #EFE8DF;
+  --border-light: #F7F2EB;
+  --border-gold: rgba(215, 183, 120, 0.38);
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
-  --shadow-sm: 0 2px 10px rgba(37, 22, 56, 0.04);
-  --shadow-md: 0 8px 24px rgba(37, 22, 56, 0.07);
-  --shadow-lg: 0 18px 45px rgba(37, 22, 56, 0.11);
-  --shadow-hover: 0 16px 36px rgba(100, 40, 217, 0.15);
+  --shadow-sm: 0 2px 10px rgba(33, 20, 47, 0.04);
+  --shadow-md: 0 8px 24px rgba(33, 20, 47, 0.07);
+  --shadow-lg: 0 18px 45px rgba(33, 20, 47, 0.12);
+  --shadow-hover: 0 18px 38px rgba(104, 41, 217, 0.16);
+  --shadow-card: 0 6px 20px rgba(33, 20, 47, 0.05);
+  --shadow-gold: 0 8px 26px rgba(215, 183, 120, 0.22);
   --shadow-card: 0 6px 20px rgba(37, 22, 56, 0.05);
   --shadow-gold: 0 8px 24px rgba(217, 183, 121, 0.2);
 
@@ -1572,6 +1577,93 @@ img {
   width: 100%;
   min-height: 440px;
   position: relative;
+}
+
+/* ================= GALLERY TRANSITION RIBBON ================= */
+.gallery-ribbon-ticker {
+  background: var(--midnight-plum);
+  color: #FFFFFF;
+  padding: 0.85rem 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid rgba(215, 183, 120, 0.35);
+  border-bottom: 1px solid rgba(215, 183, 120, 0.35);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.gallery-ribbon-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  animation: ribbonMarquee 35s linear infinite;
+  will-change: transform;
+}
+
+.gallery-ribbon-ticker:hover .gallery-ribbon-track {
+  animation-play-state: paused;
+}
+
+@keyframes ribbonMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ribbon-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #EDE8F5;
+}
+
+.ribbon-dot {
+  color: var(--champagne-gold);
+}
+
+/* ================= ASYMMETRIC EDITORIAL CATEGORY MOSAIC ================= */
+.category-mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.category-mosaic-item-featured {
+  grid-column: span 6;
+}
+
+.category-mosaic-item-standard {
+  grid-column: span 4;
+}
+
+.category-mosaic-item-wide {
+  grid-column: span 6;
+}
+
+@media (max-width: 900px) {
+  .category-mosaic-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .category-mosaic-item-featured,
+  .category-mosaic-item-standard,
+  .category-mosaic-item-wide {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 600px) {
+  .category-mosaic-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .category-mosaic-item-featured,
+  .category-mosaic-item-standard,
+  .category-mosaic-item-wide {
+    grid-column: span 1;
+  }
 }
 
 /* ================= TRUST & BENEFITS STRIP ================= */
