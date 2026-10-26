@@ -1,4 +1,4 @@
-# Logs
+# Logs & Diagnostics
 logs
 *.log
 npm-debug.log*
@@ -7,24 +7,47 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-server/node_modules
-dist
-dist-ssr
-*.local
+# Dependencies
+node_modules/
+server/node_modules/
 
-# Editor directories and files
+# Production Builds & Caches
+dist/
+dist-ssr/
+.cache/
+.parcel-cache/
+.temp/
+.tmp/
+temp/
+tmp/
+
+# Environment and Secret Files
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.production
+server/.env
+server/.env.local
+server/.env.*.local
+server/.env.production
+!.env.example
+!server/.env.example
+
+# Local overrides & OS metadata
+*.local
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor & IDE configurations
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-
-# Environment files
-.env
-.env.local
-.env.production
