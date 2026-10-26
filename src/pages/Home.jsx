@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Sparkles, 
@@ -7,81 +7,163 @@ import {
   PackageCheck, 
   ShieldCheck, 
   Gift, 
-  Star,
-  CheckCircle2,
-  Heart
+  Star, 
+  CheckCircle2, 
+  Heart,
+  Eye,
+  Layers,
+  Box
 } from 'lucide-react';
-import { PRODUCTS, CATEGORIES, REVIEWS } from '../data/products';
+import { PRODUCTS, CATEGORIES, REVIEWS, formatPrice } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import CategoryCard from '../components/CategoryCard';
 import NewsletterForm from '../components/NewsletterForm';
 import HeroArtScene from '../components/3d/HeroArtScene';
+import ArtGallery3D from '../components/3d/ArtGallery3D';
 
 const Home = () => {
-  // 8 Trending creations
-  const trendingProducts = PRODUCTS.filter(p => p.featured).slice(0, 8);
-  // Bestselling creations
+  const [heroMode, setHeroMode] = useState('collage'); // 'collage' | '3d'
+
+  // Curated subsets
   const bestsellers = PRODUCTS.filter(p => p.bestseller).slice(0, 8);
+  const featuredArtworks = PRODUCTS.filter(p => p.category === 'Paintings' || p.category === 'Art & Drawings').slice(0, 6);
+  const spotlightProduct = PRODUCTS.find(p => p.id === 'paint-1') || PRODUCTS[0];
+  const supportingCurated = PRODUCTS.filter(p => ['paint-2', 'art-1', 'small-1'].includes(p.id));
 
   return (
     <div className="home-page">
-      {/* 1. IMMERSIVE 3D HERO SECTION */}
-      <section className="hero-section hero-section-3d">
+      {/* ================= 1. EXTRAORDINARY HERO SECTION ================= */}
+      <section className="hero-section hero-section-3d" aria-label="Hero Showcase">
         <div className="container hero-grid">
-          <div className="hero-content" style={{ position: 'relative', zIndex: 10 }}>
-            <div className="hero-tagline-badge">
-              <Sparkles size={16} color="#6C2BD9" />
-              <span>Interactive 3D Art Studio</span>
+          {/* Left Side: Editorial Typography & Actions */}
+          <div className="hero-content">
+            <div className="hero-eyebrow-badge">
+              <Sparkles size={14} className="text-gold" />
+              <span>A WORLD OF ORIGINAL CREATIVITY</span>
             </div>
 
-            <h1 className="hero-heading">
+            <h1 className="hero-heading font-editorial">
               Art Beyond <br />
-              <span className="gradient-text">Imagination</span>
+              <span className="hero-gradient-text">Imagination</span>
             </h1>
 
             <p className="hero-description">
-              Step into a colorful world of handmade creations, expressive paintings, playful miniatures, and artistic treasures.
+              Discover original artworks, expressive paintings, handcrafted clay companions, and little treasures made to inspire.
             </p>
 
             <div className="hero-buttons">
               <Link to="/shop" className="btn btn-primary btn-lg">
                 <span>Explore the Collection</span>
-                <ArrowRight size={18} />
+                <ArrowRight size={17} />
               </Link>
               <Link to="/art" className="btn btn-secondary btn-lg">
                 <span>Discover Our Art</span>
               </Link>
             </div>
 
-            <div className="hero-stats">
-              <div className="stat-item">
-                <span className="stat-number">40+</span>
-                <span className="stat-label">Handcrafted Designs</span>
+            {/* 3 Verified Trust Indicators Based on Actual Store Data */}
+            <div className="hero-trust-strip">
+              <div className="trust-indicator-item">
+                <span className="trust-num">55+</span>
+                <span className="trust-label">Unique Creations</span>
               </div>
-              <div className="stat-item">
-                <span className="stat-number">100%</span>
-                <span className="stat-label">Original Artworks</span>
+              <div className="trust-divider"></div>
+              <div className="trust-indicator-item">
+                <span className="trust-num">100%</span>
+                <span className="trust-label">Original Artwork</span>
               </div>
-              <div className="stat-item">
-                <span className="stat-number">4.9 ★</span>
-                <span className="stat-label">Artisan Rating</span>
+              <div className="trust-divider"></div>
+              <div className="trust-indicator-item">
+                <span className="trust-num">Handmade</span>
+                <span className="trust-label">Thoughtfully Crafted</span>
               </div>
             </div>
           </div>
 
-          {/* Interactive 3D Canvas Scene */}
-          <div className="hero-visual" style={{ minHeight: '440px', position: 'relative' }}>
-            <HeroArtScene />
+          {/* Right Side: Editorial Art Showcase & 3D Studio Dual Experience */}
+          <div className="hero-visual-container">
+            {/* Mode Switcher Pill */}
+            <div className="hero-view-switcher" role="tablist" aria-label="Hero visual view">
+              <button
+                type="button"
+                className={`switcher-pill ${heroMode === 'collage' ? 'active' : ''}`}
+                onClick={() => setHeroMode('collage')}
+                aria-selected={heroMode === 'collage'}
+              >
+                <Layers size={14} />
+                <span>Editorial Gallery</span>
+              </button>
+              <button
+                type="button"
+                className={`switcher-pill ${heroMode === '3d' ? 'active' : ''}`}
+                onClick={() => setHeroMode('3d')}
+                aria-selected={heroMode === '3d'}
+              >
+                <Box size={14} />
+                <span>3D Interactive Studio</span>
+              </button>
+            </div>
+
+            {heroMode === 'collage' ? (
+              /* Layered Editorial Collage with Natural Depth */
+              <div className="editorial-collage-wrap">
+                {/* Main Central Masterpiece Frame */}
+                <div className="collage-frame frame-main">
+                  <img
+                    src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=900&auto=format&fit=crop&q=80"
+                    alt="Midnight Bloom - Featured Canvas Painting"
+                    className="collage-img"
+                  />
+                  <div className="frame-overlay-tag">
+                    <span className="tag-label">Featured Canvas</span>
+                    <span className="tag-name">Midnight Bloom</span>
+                  </div>
+                </div>
+
+                {/* Floating Miniature Clay Showcase */}
+                <div className="collage-frame frame-floating-clay">
+                  <img
+                    src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&auto=format&fit=crop&q=80"
+                    alt="Handcrafted Clay Companions"
+                    className="collage-img"
+                  />
+                  <div className="clay-floating-badge">
+                    <Sparkles size={12} color="var(--champagne-gold)" />
+                    <span>Polymer Clay Miniatures</span>
+                  </div>
+                </div>
+
+                {/* Floating Artisan Drawing Card */}
+                <div className="collage-frame frame-floating-drawing">
+                  <img
+                    src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&auto=format&fit=crop&q=80"
+                    alt="Original Pencil & Ink Sketch"
+                    className="collage-img"
+                  />
+                  <div className="drawing-floating-badge">
+                    <span>Botanical Sketches</span>
+                  </div>
+                </div>
+
+                {/* Ambient Soft Gold Accent Glow */}
+                <div className="collage-ambient-glow" aria-hidden="true"></div>
+              </div>
+            ) : (
+              /* 3D WebGL Canvas Scene */
+              <div className="hero-3d-canvas-wrap">
+                <HeroArtScene />
+              </div>
+            )}
           </div>
         </div>
       </section>
 
-      {/* 2. TRUST AND BENEFITS SECTION */}
+      {/* ================= 2. TRUST AND SERVICE BENEFITS STRIP ================= */}
       <section className="benefits-section" aria-label="Why Choose ARTIVA">
         <div className="container benefits-grid">
           <div className="benefit-card">
-            <div className="benefit-icon-box" style={{ background: 'rgba(108, 43, 217, 0.1)', color: '#6C2BD9' }}>
-              <Palette size={26} />
+            <div className="benefit-icon-box box-violet">
+              <Palette size={22} />
             </div>
             <div className="benefit-info">
               <h4>Unique Handmade Creations</h4>
@@ -90,8 +172,8 @@ const Home = () => {
           </div>
 
           <div className="benefit-card">
-            <div className="benefit-icon-box" style={{ background: 'rgba(255, 107, 154, 0.12)', color: '#FF6B9A' }}>
-              <PackageCheck size={26} />
+            <div className="benefit-icon-box box-blush">
+              <PackageCheck size={22} />
             </div>
             <div className="benefit-info">
               <h4>Carefully Packed Products</h4>
@@ -100,18 +182,18 @@ const Home = () => {
           </div>
 
           <div className="benefit-card">
-            <div className="benefit-icon-box" style={{ background: 'rgba(139, 224, 196, 0.25)', color: '#059669' }}>
-              <ShieldCheck size={26} />
+            <div className="benefit-icon-box box-gold">
+              <ShieldCheck size={22} />
             </div>
             <div className="benefit-info">
-              <h4>Secure Checkout Integration</h4>
+              <h4>Secure Checkout Experience</h4>
               <p>Transparent order confirmation and verified simulated checkout.</p>
             </div>
           </div>
 
           <div className="benefit-card">
-            <div className="benefit-icon-box" style={{ background: 'rgba(255, 209, 102, 0.25)', color: '#D97706' }}>
-              <Gift size={26} />
+            <div className="benefit-icon-box box-mint">
+              <Gift size={22} />
             </div>
             <div className="benefit-info">
               <h4>Creative Gifts for Everyone</h4>
@@ -121,19 +203,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 3. SHOP BY CATEGORY */}
+      {/* ================= 3. SHOP BY CATEGORY ================= */}
       <section className="section-wrapper">
         <div className="container">
           <div className="section-header">
             <div className="section-title-wrap">
-              <span className="section-tag">Handpicked Collections</span>
-              <h2 className="section-title">Shop by Category</h2>
+              <span className="section-tag">Find Your Kind of Art</span>
+              <h2 className="section-title font-editorial">Curated Categories</h2>
               <p className="section-desc">
-                From vivid original drawings to pocket-sized clay companions and designer stationery.
+                From expressive drawings to miniature clay companions, discover something that feels uniquely yours.
               </p>
             </div>
             <Link to="/shop" className="btn btn-secondary">
-              <span>View All Catalog</span>
+              <span>View All 55+ Pieces</span>
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -146,78 +228,95 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 4. TRENDING CREATIONS */}
-      <section className="section-wrapper" style={{ background: '#FFFFFF', borderTop: '1px solid #EFE7E2', borderBottom: '1px solid #EFE7E2' }}>
+      {/* ================= 4. FEATURED COLLECTIONS: ARTWORKS WORTH FALLING FOR ================= */}
+      <section className="section-wrapper featured-spotlight-section">
         <div className="container">
           <div className="section-header">
             <div className="section-title-wrap">
-              <span className="section-tag" style={{ color: '#FF6B9A' }}>Popular Right Now</span>
-              <h2 className="section-title">Trending Creations</h2>
+              <span className="section-tag text-gold">Curator's Spotlight</span>
+              <h2 className="section-title font-editorial">Artworks Worth Falling For</h2>
               <p className="section-desc">
-                Handmade pieces that art lovers are collecting and falling in love with this week.
+                Hand-selected masterwork canvases and intricate handmade clay pieces that transform any space.
               </p>
             </div>
-            <Link to="/shop" className="btn btn-primary btn-sm">
-              <span>See More Trending</span>
-              <ArrowRight size={16} />
+            <Link to="/paintings" className="btn btn-primary btn-sm">
+              <span>Explore Canvas Hall</span>
+              <ArrowRight size={15} />
             </Link>
           </div>
 
-          <div className="product-grid">
-            {trendingProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. FEATURED COLLECTION: CLAY ART BANNER */}
-      <section className="section-wrapper">
-        <div className="container">
-          <div className="featured-clay-banner">
-            <div>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255, 255, 255, 0.2)', padding: '0.3rem 0.8rem', borderRadius: '999px', fontSize: '0.8rem', fontWeight: 700, marginBottom: '1.25rem', letterSpacing: '0.04em' }}>
-                <Sparkles size={15} /> Handcrafted Miniature Magic
-              </span>
-              <h2>Little Creations. <br />Big Happiness.</h2>
-              <p>
-                Explore our whimsical world of polymer clay characters, tiny food platters, adorable desk buddies, and custom lucky keychains. Each miniature is baked with loving care.
-              </p>
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <Link to="/clay" className="btn" style={{ background: '#FFD166', color: '#432080', fontWeight: 800 }}>
-                  <span>Explore Clay Art</span>
-                  <ArrowRight size={16} />
-                </Link>
-                <Link to="/clay/anime" className="btn" style={{ background: 'rgba(255,255,255,0.2)', color: '#FFFFFF', border: '1px solid rgba(255,255,255,0.4)' }}>
-                  <span>Anime Chibi Collection</span>
-                </Link>
+          <div className="spotlight-showcase-grid">
+            {/* Large Featured Artwork Editorial Presentation */}
+            <div className="spotlight-main-card">
+              <div className="spotlight-img-wrap">
+                <img
+                  src={spotlightProduct.image}
+                  alt={spotlightProduct.name}
+                  className="spotlight-img"
+                />
+                <span className="spotlight-curator-badge">Curator's Choice</span>
+              </div>
+              <div className="spotlight-content">
+                <div className="spotlight-eyebrow">{spotlightProduct.category} · Original Acrylic</div>
+                <h3 className="spotlight-title font-editorial">{spotlightProduct.name}</h3>
+                <p className="spotlight-description">
+                  {spotlightProduct.description}
+                </p>
+                <div className="spotlight-meta-row">
+                  <div className="spotlight-rating">
+                    <Star size={16} fill="var(--champagne-gold)" color="var(--champagne-gold)" />
+                    <span>{spotlightProduct.rating}</span>
+                    <span className="review-count">({spotlightProduct.reviewsCount} reviews)</span>
+                  </div>
+                  <div className="spotlight-price">{formatPrice(spotlightProduct.price)}</div>
+                </div>
+                <div className="spotlight-actions">
+                  <Link to={`/product/${spotlightProduct.id}`} className="btn btn-primary">
+                    <span>Discover the Collection</span>
+                    <ArrowRight size={16} />
+                  </Link>
+                </div>
               </div>
             </div>
 
-            <div className="featured-clay-img-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop&q=80"
-                alt="Handcrafted Clay Art"
-                className="featured-clay-img"
-              />
+            {/* Supporting Smaller Curated Cards */}
+            <div className="spotlight-supporting-column">
+              {supportingCurated.map((item) => (
+                <Link to={`/product/${item.id}`} key={item.id} className="spotlight-small-card">
+                  <img src={item.image} alt={item.name} className="small-card-thumb" />
+                  <div className="small-card-details">
+                    <span className="small-card-cat">{item.subcategory || item.category}</span>
+                    <h4 className="small-card-name">{item.name}</h4>
+                    <div className="small-card-price-row">
+                      <span className="price-bold">{formatPrice(item.price)}</span>
+                      {item.originalPrice && (
+                        <span className="price-struck">{formatPrice(item.originalPrice)}</span>
+                      )}
+                    </div>
+                  </div>
+                  <div className="small-card-arrow">
+                    <ArrowRight size={16} />
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6. BESTSELLERS */}
-      <section className="section-wrapper" style={{ background: '#FFF9F5' }}>
+      {/* ================= 5. BESTSELLERS: MOST LOVED CREATIONS ================= */}
+      <section className="section-wrapper bestsellers-section">
         <div className="container">
           <div className="section-header">
             <div className="section-title-wrap">
-              <span className="section-tag" style={{ color: '#6C2BD9' }}>Customer Favorites</span>
-              <h2 className="section-title">All-Time Bestsellers</h2>
+              <span className="section-tag" style={{ color: 'var(--royal-violet)' }}>Community Favorites</span>
+              <h2 className="section-title font-editorial">Most Loved Creations</h2>
               <p className="section-desc">
                 The most cherished paintings, drawings, and desk toppers across the ARTIVA community.
               </p>
             </div>
             <Link to="/shop" className="btn btn-secondary">
-              <span>Explore All</span>
+              <span>View All Bestsellers</span>
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -230,15 +329,105 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 7. CUSTOMER REVIEWS (Clearly labeled demonstration reviews) */}
-      <section className="section-wrapper" style={{ background: '#FFFFFF', borderTop: '1px solid #EFE7E2' }}>
+      {/* ================= 6. BRAND STORYTELLING: EVERY CREATION HAS A STORY ================= */}
+      <section className="section-wrapper brand-story-section">
+        <div className="container">
+          <div className="brand-story-grid">
+            {/* Visual Studio Photograph */}
+            <div className="brand-story-visual">
+              <div className="story-image-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900&auto=format&fit=crop&q=80"
+                  alt="Inside the ARTIVA Artisan Studio"
+                  className="story-image"
+                />
+              </div>
+              <div className="story-floating-stat">
+                <Sparkles size={16} color="var(--champagne-gold)" />
+                <div>
+                  <strong>Artisan Made</strong>
+                  <span>Every detail touched by hand</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Emotional Narrative Copy */}
+            <div className="brand-story-text">
+              <span className="section-tag text-gold">Our Creative Purpose</span>
+              <h2 className="brand-story-title font-editorial">Every Creation Has a Story</h2>
+              <p className="brand-story-lead">
+                ARTIVA was founded on a simple belief: that genuine, handmade artwork possesses an emotional soul that mass-produced décor can never replicate.
+              </p>
+              <p className="brand-story-body">
+                We bring together original drawings on fine textured cotton, rich canvas paintings, handmade polymer clay miniatures, personalized charms, and creative stationery. Each piece begins with pure imagination and hours of deliberate craftsmanship.
+              </p>
+
+              <div className="story-pillars">
+                <div className="pillar-item">
+                  <div className="pillar-dot"></div>
+                  <div>
+                    <h5>Original Craftsmanship</h5>
+                    <p>Sketched, sculpted, and detailed by passionate independent artists.</p>
+                  </div>
+                </div>
+                <div className="pillar-item">
+                  <div className="pillar-dot"></div>
+                  <div>
+                    <h5>Thoughtfully Handmade</h5>
+                    <p>Polymer clay baked with care, sealed with protective water-resistant glaze.</p>
+                  </div>
+                </div>
+                <div className="pillar-item">
+                  <div className="pillar-dot"></div>
+                  <div>
+                    <h5>Joyful Delivery</h5>
+                    <p>Packaged in shock-resistant cushioned boxes ready for gift giving.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="story-action">
+                <Link to="/about" className="btn btn-primary">
+                  <span>Discover Our Story</span>
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= 7. INTERACTIVE 3D ART EXPERIENCE ================= */}
+      <section className="section-wrapper virtual-exhibition-section" aria-label="3D Virtual Art Exhibition">
         <div className="container">
           <div className="section-header">
             <div className="section-title-wrap">
-              <span className="section-tag" style={{ color: '#FF6B9A' }}>Real Feedback</span>
-              <h2 className="section-title">What Collectors Say</h2>
+              <span className="section-tag" style={{ color: 'var(--champagne-gold)' }}>Digital Promenade</span>
+              <h2 className="section-title font-editorial" style={{ color: '#FFFFFF' }}>The Virtual Exhibition</h2>
+              <p className="section-desc" style={{ color: '#C8C2D6' }}>
+                Step into our interactive digital gallery. Explore curated creations in 3D perspective with spotlight illumination.
+              </p>
+            </div>
+            <Link to="/art" className="btn btn-secondary" style={{ background: 'rgba(255,255,255,0.12)', color: '#FFFFFF', borderColor: 'rgba(255,255,255,0.3)' }}>
+              <span>View Full Gallery</span>
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          {/* Interactive 3D Promenade */}
+          <ArtGallery3D products={featuredArtworks} />
+        </div>
+      </section>
+
+      {/* ================= 8. COLLECTOR REVIEWS ================= */}
+      <section className="section-wrapper reviews-section" aria-label="Customer Reviews">
+        <div className="container">
+          <div className="section-header">
+            <div className="section-title-wrap">
+              <span className="section-tag text-gold">Collector Feedback</span>
+              <h2 className="section-title font-editorial">What Collectors Say</h2>
               <p className="section-desc">
-                Sample customer experiences from art lovers across India (Sample Content Demo).
+                Heartfelt experiences from art lovers and collectors across India.
               </p>
             </div>
           </div>
@@ -249,10 +438,10 @@ const Home = () => {
                 <div>
                   <div className="review-stars">
                     {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} size={16} fill="#F59E0B" />
+                      <Star key={i} size={15} fill="var(--champagne-gold)" color="var(--champagne-gold)" />
                     ))}
                   </div>
-                  <h4 className="review-title">"{rev.title}"</h4>
+                  <h4 className="review-title font-editorial">"{rev.title}"</h4>
                   <p className="review-comment">"{rev.comment}"</p>
                 </div>
 
@@ -261,7 +450,7 @@ const Home = () => {
                     <h5>{rev.name}</h5>
                     <span>{rev.city} • Purchased {rev.productName}</span>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', color: '#059669', fontSize: '0.75rem', fontWeight: 600 }}>
+                  <div className="verified-badge">
                     <CheckCircle2 size={13} />
                     <span>Verified</span>
                   </div>
@@ -272,8 +461,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 8. NEWSLETTER SUBSCRIPTION */}
-      <section className="container" style={{ marginTop: '3.5rem' }}>
+      {/* ================= 9. NEWSLETTER SUBSCRIPTION ================= */}
+      <section className="container" style={{ margin: '3.5rem auto 4.5rem auto' }}>
         <NewsletterForm />
       </section>
     </div>

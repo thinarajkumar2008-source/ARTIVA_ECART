@@ -57,7 +57,7 @@ export const CATEGORIES = [
   },
   {
     id: 'keychains',
-    name: 'Keychains',
+    name: 'Handmade Keychains',
     slug: 'keychain',
     categoryGroup: 'Clay Art',
     description: 'Durable, lightweight clay charms and keychains finished with water-resistant resin and sturdy alloy rings.',
@@ -68,7 +68,7 @@ export const CATEGORIES = [
   },
   {
     id: 'pen-pencil',
-    name: 'Pen & Pencil Designer',
+    name: 'Creative Pens & Pencils',
     slug: 'pen-pencil',
     categoryGroup: 'Clay Art',
     description: 'Handmade clay pencil toppers, decorative student pens, and cheerful desk stationery creations.',

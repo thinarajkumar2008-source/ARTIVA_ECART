@@ -1,37 +1,44 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle, Sparkles } from 'lucide-react';
 
 const NewsletterForm = () => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState(null); // { type: 'success' | 'error', message: '' }
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setStatus({
         type: 'error',
-        message: 'Please provide a valid email address (e.g., yourname@example.com).'
+        message: 'Please enter a valid email address (e.g., yourname@domain.com).'
       });
       return;
     }
 
-    // Success response in local mode
-    setStatus({
-      type: 'success',
-      message: '✨ Welcome to the ARTIVA creative circle! You are subscribed for new art drops and secret discounts.'
-    });
-    setEmail('');
+    setIsSubmitting(true);
+    // Simulated subscription feedback clearly labeled
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setStatus({
+        type: 'success',
+        message: '✨ Thank you for joining! (Demo verification: Your subscription preference has been recorded).'
+      });
+      setEmail('');
+    }, 400);
   };
 
   return (
     <div className="newsletter-section">
       <div className="newsletter-content">
-        <span className="section-tag" style={{ color: '#FF6B9A' }}>Join Our Creative World</span>
-        <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '0.6rem' }}>
-          Get 10% Off Your First Artisan Purchase
+        <span className="section-tag" style={{ color: 'var(--champagne-gold)', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+          <Sparkles size={14} /> The Collector's Dispatch
+        </span>
+        <h2 className="font-editorial" style={{ fontSize: '2.4rem', fontWeight: 700, marginBottom: '0.75rem', color: '#FFFFFF' }}>
+          A Little More Art in Your Inbox
         </h2>
-        <p>
-          Receive inspiring artist spotlights, sneak previews of new clay miniatures, and limited edition original releases.
+        <p style={{ color: '#D6D0E0', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: '520px', margin: '0 auto 1.5rem auto' }}>
+          Be the first to discover new gallery releases, behind-the-scenes artisan studio stories, and seasonal art offers.
         </p>
 
         <form onSubmit={handleSubmit} className="newsletter-form" noValidate>
@@ -44,12 +51,17 @@ const NewsletterForm = () => {
               setEmail(e.target.value);
               if (status) setStatus(null);
             }}
-            aria-label="Email address for newsletter"
+            aria-label="Email address for art updates"
             required
           />
-          <button type="submit" className="btn btn-primary" style={{ padding: '0.85rem 1.75rem' }}>
-            <span>Subscribe</span>
-            <Send size={16} />
+          <button 
+            type="submit" 
+            className="btn btn-primary" 
+            style={{ padding: '0.85rem 1.85rem', flexShrink: 0 }}
+            disabled={isSubmitting}
+          >
+            <span>{isSubmitting ? 'Joining...' : 'Subscribe'}</span>
+            <Send size={15} />
           </button>
         </form>
 
@@ -59,11 +71,11 @@ const NewsletterForm = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '0.4rem',
-              marginTop: '1rem',
-              fontSize: '0.88rem',
+              gap: '0.5rem',
+              marginTop: '1.1rem',
+              fontSize: '0.9rem',
               fontWeight: 500,
-              color: status.type === 'success' ? '#059669' : '#EF4444'
+              color: status.type === 'success' ? '#8BE0C4' : '#FF6B9A'
             }}
           >
             {status.type === 'success' ? <CheckCircle2 size={16} /> : <AlertCircle size={16} />}
@@ -71,8 +83,8 @@ const NewsletterForm = () => {
           </div>
         )}
 
-        <div style={{ fontSize: '0.75rem', color: '#777386', marginTop: '0.75rem' }}>
-          * Demonstration newsletter subscription. No spam, ever.
+        <div style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.45)', marginTop: '0.85rem' }}>
+          Thoughtfully curated. No spam, ever. Unsubscribe anytime with one click.
         </div>
       </div>
     </div>
