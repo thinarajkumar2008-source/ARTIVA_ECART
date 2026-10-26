@@ -233,7 +233,7 @@ export const PRODUCTS = [
     description: 'Hyper-realistic graphite portrait emphasizing emotional depth, intricate hair textures, and lifelike catchlights in the eyes.',
     price: 1199,
     originalPrice: 1699,
-    image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1582201942988-13e60e4556ee?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop&q=80'
     ],
@@ -256,7 +256,7 @@ export const PRODUCTS = [
     description: 'An exuberant garden scene packed with hydrangeas, marigolds, and fluttering butterflies. Coated with protective matte fixative.',
     price: 849,
     originalPrice: 1150,
-    image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&auto=format&fit=crop&q=80'
     ],
@@ -306,7 +306,7 @@ export const PRODUCTS = [
     description: 'Swirling turquoise waters, frothy white breakers, and deep sapphire undertones. Impasto palette knife technique creates tangible ocean ripples.',
     price: 2199,
     originalPrice: 2899,
-    image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&auto=format&fit=crop&q=80'
@@ -330,7 +330,7 @@ export const PRODUCTS = [
     description: 'Warm coral, amber, and golden rays reflecting over a tranquil lake. Fills any living room or studio with calming twilight energy.',
     price: 1699,
     originalPrice: 2199,
-    image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&auto=format&fit=crop&q=80'
     ],
@@ -376,7 +376,7 @@ export const PRODUCTS = [
     description: 'Soft pink lotuses floating gracefully on calm waters. Textured brushwork brings petals to life with delicate organic grace.',
     price: 1499,
     originalPrice: 1999,
-    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop&q=80'
     ],
@@ -422,7 +422,7 @@ export const PRODUCTS = [
     description: 'Rich crimson and lavender evening clouds hovering over coastal cliffs. Radiates warmth and comforting contemplation.',
     price: 1599,
     originalPrice: 2050,
-    image: 'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&auto=format&fit=crop&q=80'
     ],
@@ -445,7 +445,7 @@ export const PRODUCTS = [
     description: 'Clean minimalist colour blocking featuring cool ultramarine, crisp titanium white, and raw umber lines creating modern architectural harmony.',
     price: 1999,
     originalPrice: 2600,
-    image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&auto=format&fit=crop&q=80'
     ],
@@ -517,7 +517,7 @@ export const PRODUCTS = [
     description: 'A charming terracotta-colored clay planter holding sculpted pastel succulents with realistic petal blush and tiny soil granules.',
     price: 399,
     originalPrice: 550,
-    image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1590736969955-71cc94801759?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=800&auto=format&fit=crop&q=80'
     ],
@@ -586,7 +586,7 @@ export const PRODUCTS = [
     description: 'Bright canary yellow duckling balancing a tiny daisy flower hat upon its head. Guaranteed to spark a warm smile every day.',
     price: 329,
     originalPrice: 450,
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1569863959149-a6f6df6966fa?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800&auto=format&fit=crop&q=80'
     ],
@@ -609,7 +609,7 @@ export const PRODUCTS = [
     description: 'Fluffy pastel blue and white cloud with blushing pink cheeks and tiny golden rain drops dangling on delicate wires.',
     price: 289,
     originalPrice: 380,
-    image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop&q=80'
     ],
@@ -632,7 +632,7 @@ export const PRODUCTS = [
     description: 'A round bright green tree frog resting peacefully on a sculpted floating lily pad with a tiny pink waterlily bud.',
     price: 349,
     originalPrice: 470,
-    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1567653418876-5bb0e566e1c2?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop&q=80'
     ],
@@ -657,7 +657,7 @@ export const PRODUCTS = [
     description: 'An original anime idol chibi with sparkling starry eyes, pastel gradient twin tails, and a star microphone. Completely handcrafted.',
     price: 649,
     originalPrice: 899,
-    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800&auto=format&fit=crop&q=80'
@@ -681,7 +681,7 @@ export const PRODUCTS = [
     description: 'A courageous little anime hero with a fluttering crimson scarf, determined grin, and miniature clay companion shield.',
     price: 599,
     originalPrice: 799,
-    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80'
     ],
@@ -704,7 +704,7 @@ export const PRODUCTS = [
     description: 'An original anime student wearing a pleated skirt, school blazer, and wielding a glowing star-tipped wand.',
     price: 699,
     originalPrice: 950,
-    image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1514533450685-4493e01d1fdc?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&auto=format&fit=crop&q=80'
     ],
@@ -727,7 +727,7 @@ export const PRODUCTS = [
     description: 'Brave adventurer in silver-tinted armor with twin clay blades and spiky midnight-blue sculpted hair.',
     price: 749,
     originalPrice: 999,
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80'
     ],
@@ -750,7 +750,7 @@ export const PRODUCTS = [
     description: 'Mystical anime cat with dual-colored eyes, oversized ears, and a soft lavender bell necklace.',
     price: 499,
     originalPrice: 650,
-    image: 'https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?w=800&auto=format&fit=crop&q=80'
     ],
@@ -773,7 +773,7 @@ export const PRODUCTS = [
     description: 'Original design featuring a shy schoolgirl with lavender hair tied in ribbon buns, holding a warm cup of boba tea.',
     price: 620,
     originalPrice: 850,
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=800&auto=format&fit=crop&q=80'
     ],
@@ -796,7 +796,7 @@ export const PRODUCTS = [
     description: 'Chic urban anime character with headphones around his neck, oversized bomber jacket, and cool silver sneakers.',
     price: 640,
     originalPrice: 870,
-    image: 'https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800&auto=format&fit=crop&q=80'
     ],
@@ -821,7 +821,7 @@ export const PRODUCTS = [
     description: 'A round, sunny-yellow companion with big round cartoon eyes, rosy blush, and open arms ready for a hug.',
     price: 319,
     originalPrice: 429,
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&auto=format&fit=crop&q=80'
@@ -845,7 +845,7 @@ export const PRODUCTS = [
     description: 'A friendly sculpted arch with layered rainbow clay strips and little smiling eyes perched on fluffy white cloud shoes.',
     price: 359,
     originalPrice: 480,
-    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1535572290543-960a8046f5af?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80'
     ],
@@ -868,7 +868,7 @@ export const PRODUCTS = [
     description: 'Puffy dream cloud holding a tiny heart in its hands. Perfect for uplifting your work desk or bedside table.',
     price: 279,
     originalPrice: 380,
-    image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1563089145-599997674d42?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop&q=80'
     ],
@@ -891,7 +891,7 @@ export const PRODUCTS = [
     description: 'A fuzzy-textured purple monster with one huge expressive eye, playful horns, and a toothy grin.',
     price: 369,
     originalPrice: 499,
-    image: 'https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?w=800&auto=format&fit=crop&q=80'
     ],
@@ -914,7 +914,7 @@ export const PRODUCTS = [
     description: 'Charming vintage-style mint robot with antenna ears, gauge meter chest, and movable wire joints.',
     price: 429,
     originalPrice: 580,
-    image: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&auto=format&fit=crop&q=80'
     ],
@@ -937,7 +937,7 @@ export const PRODUCTS = [
     description: 'Bright red strawberry with textured seed indentations, a green leafy stem crown, and cheerful wink.',
     price: 299,
     originalPrice: 399,
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&auto=format&fit=crop&q=80'
     ],
@@ -960,7 +960,7 @@ export const PRODUCTS = [
     description: 'Plump Antarctic penguin bundled up in a miniature hand-twisted striped red and white clay winter muffler.',
     price: 349,
     originalPrice: 480,
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800&auto=format&fit=crop&q=80'
     ],
@@ -983,7 +983,7 @@ export const PRODUCTS = [
     description: 'Swirled multi-color clay monster with pastel ears, quirky antenna, and a heart-warming smile.',
     price: 329,
     originalPrice: 440,
-    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1031,7 +1031,7 @@ export const PRODUCTS = [
     description: 'Pastel pink and purple marbling forming an elegant puffed heart. Coated with glassy crystal resin for scratch protection.',
     price: 229,
     originalPrice: 299,
-    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1054,7 +1054,7 @@ export const PRODUCTS = [
     description: 'Golden yellow clay star with a subtle glow-in-the-dark shimmer and a dangling tiny pearl accent bead.',
     price: 259,
     originalPrice: 350,
-    image: 'https://images.unsplash.com/photo-1585336261026-7756f71694f9?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1538370965046-79c0d6907d47?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1585336261026-7756f71694f9?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1077,7 +1077,7 @@ export const PRODUCTS = [
     description: 'Five-petal Japanese cherry blossom with gradient pink petal tips and tiny gold stamen bead centers.',
     price: 269,
     originalPrice: 380,
-    image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1522383225653-ed111181a951?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1100,7 +1100,7 @@ export const PRODUCTS = [
     description: 'Delightful Shiba Inu puppy face with toasted sesame coloring, white brow dots, and a happy open mouth.',
     price: 299,
     originalPrice: 420,
-    image: 'https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1123,7 +1123,7 @@ export const PRODUCTS = [
     description: 'Chic macaron-tone rainbow arc with tiny white cloud terminals and a golden mini star charm dangling alongside.',
     price: 279,
     originalPrice: 390,
-    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1561055657-b9e0bf0fa360?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1146,7 +1146,7 @@ export const PRODUCTS = [
     description: 'Artistic monogram sculpted with floral sprigs and golden metallic leafing embedded in smooth clay.',
     price: 289,
     originalPrice: 399,
-    image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1169,7 +1169,7 @@ export const PRODUCTS = [
     description: 'Realistic chocolate glazed donut charm with rainbow rainbow sprinkles and a playful bite taken out of one side.',
     price: 249,
     originalPrice: 349,
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1218,7 +1218,7 @@ export const PRODUCTS = [
     description: 'Smooth writing 0.5mm black gel ink pen crowned with a sculpted brown teddy bear wearing a tiny blue bowtie.',
     price: 249,
     originalPrice: 350,
-    image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1241,7 +1241,7 @@ export const PRODUCTS = [
     description: 'Set of two handmade pencils topped with detailed miniature sunflower and lavender clay flowers.',
     price: 349,
     originalPrice: 480,
-    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1569683795645-b62e50fbf103?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1264,7 +1264,7 @@ export const PRODUCTS = [
     description: 'The entire pen body is hand-wrapped in marbled rainbow polymer clay and hand-sanded to a velvety ergonomic finish.',
     price: 299,
     originalPrice: 399,
-    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1287,7 +1287,7 @@ export const PRODUCTS = [
     description: 'A whimsical lime-green alien topper with three bouncy antenna springs and a joyful toothy smirk.',
     price: 219,
     originalPrice: 299,
-    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1596495577886-d920f1fb7238?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1563245372-f21724e3856d?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1310,7 +1310,7 @@ export const PRODUCTS = [
     description: 'Pastel coral tulip bud atop a slender green stem pen barrel. Gives the charming illusion of writing with a fresh flower.',
     price: 269,
     originalPrice: 380,
-    image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1333,7 +1333,7 @@ export const PRODUCTS = [
     description: 'Intricately textured little brown owl topper with golden spectacles and tiny feathered ear tufts.',
     price: 239,
     originalPrice: 320,
-    image: 'https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?w=800&auto=format&fit=crop&q=80'
     ],
@@ -1356,7 +1356,7 @@ export const PRODUCTS = [
     description: 'Features a miniature artist paint palette with bright dollops of acrylic color and a tiny paintbrush topper. A must-have for art lovers!',
     price: 289,
     originalPrice: 399,
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&auto=format&fit=crop&q=80',
     galleryImages: [
       'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=800&auto=format&fit=crop&q=80'
     ],

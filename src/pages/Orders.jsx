@@ -19,8 +19,8 @@ const Orders = () => {
   return (
     <div className="orders-page container" style={{ padding: '2.5rem 1.5rem 5rem 1.5rem' }}>
       <div style={{ marginBottom: '2.5rem' }}>
-        <span className="section-tag" style={{ color: '#6C2BD9' }}>Purchase History</span>
-        <h1 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#27213C' }}>
+        <span className="section-tag text-gold">Purchase History</span>
+        <h1 className="font-editorial" style={{ fontSize: '2.8rem', fontWeight: 700, color: 'var(--midnight-plum)' }}>
           My Orders ({orders.length})
         </h1>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: '#FEF3C7', color: '#92400E', padding: '0.25rem 0.65rem', borderRadius: '6px', fontSize: '0.8rem', fontWeight: 600, marginTop: '0.4rem' }}>

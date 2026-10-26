@@ -82,11 +82,11 @@ const CustomCursor = () => {
           position: 'fixed',
           left: trailingPos.x,
           top: trailingPos.y,
-          width: isHovering ? '44px' : '28px',
-          height: isHovering ? '44px' : '28px',
+          width: isHovering ? '42px' : '28px',
+          height: isHovering ? '42px' : '28px',
           borderRadius: '50%',
-          border: '1.5px solid rgba(108, 43, 217, 0.45)',
-          background: isHovering ? 'rgba(255, 107, 154, 0.12)' : 'rgba(108, 43, 217, 0.05)',
+          border: '1.5px solid rgba(217, 183, 121, 0.6)',
+          background: isHovering ? 'rgba(100, 40, 217, 0.12)' : 'rgba(217, 183, 121, 0.08)',
           pointerEvents: 'none',
           transform: 'translate(-50%, -50%)',
           transition: 'width 0.22s ease, height 0.22s ease, background 0.22s ease',
@@ -100,15 +100,15 @@ const CustomCursor = () => {
           position: 'fixed',
           left: pos.x,
           top: pos.y,
-          width: isHovering ? '10px' : '7px',
-          height: isHovering ? '10px' : '7px',
+          width: isHovering ? '9px' : '6px',
+          height: isHovering ? '9px' : '6px',
           borderRadius: '50%',
-          background: isHovering ? 'linear-gradient(135deg, #FF6B9A 0%, #FFD166 100%)' : '#6C2BD9',
+          background: isHovering ? 'linear-gradient(135deg, #D9B779 0%, #6428D9 100%)' : '#6428D9',
           pointerEvents: 'none',
           transform: 'translate(-50%, -50%)',
           transition: 'width 0.15s ease, height 0.15s ease, background 0.15s ease',
           zIndex: 99999,
-          boxShadow: '0 0 10px rgba(108, 43, 217, 0.6)'
+          boxShadow: '0 0 10px rgba(100, 40, 217, 0.5)'
         }}
       />
     </>

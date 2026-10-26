@@ -52,28 +52,30 @@ const ClayArt = () => {
       {/* Visual Clay Art Banner with 3D Studio Canvas */}
       <div 
         style={{
-          background: 'linear-gradient(135deg, #6C2BD9 0%, #FF6B9A 50%, #FFD166 100%)',
+          background: 'linear-gradient(135deg, #251638 0%, #432080 50%, #6428D9 100%)',
           borderRadius: '24px',
-          padding: '3rem 2.5rem',
+          padding: '3.5rem 2.5rem',
           color: '#FFFFFF',
           marginBottom: '3.5rem',
-          boxShadow: '0 16px 36px rgba(108, 43, 217, 0.25)',
+          boxShadow: '0 18px 45px rgba(37, 22, 56, 0.25)',
+          border: '1px solid rgba(217, 183, 121, 0.35)',
           position: 'relative',
           overflow: 'hidden',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           alignItems: 'center',
-          gap: '2rem'
+          gap: '2.5rem'
         }}
       >
         <div style={{ position: 'relative', zIndex: 2 }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255, 255, 255, 0.2)', padding: '0.3rem 0.8rem', borderRadius: '999px', fontSize: '0.8rem', fontWeight: 700, marginBottom: '1rem' }}>
-            <Sparkles size={15} /> Handcrafted 3D Polymer Wonders
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(217, 183, 121, 0.18)', border: '1px solid rgba(217, 183, 121, 0.45)', color: '#FFF2D1', padding: '0.35rem 0.95rem', borderRadius: '999px', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+            <Sparkles size={14} color="#D9B779" />
+            <span>Handmade Studio · {clayProducts.length} Clay Creations</span>
           </div>
-          <h1 style={{ fontSize: '2.8rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.15, marginBottom: '0.8rem' }}>
+          <h1 className="font-editorial" style={{ fontSize: '2.8rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.15, marginBottom: '0.9rem' }}>
             Handmade Clay Art — Tiny Pieces of Joy
           </h1>
-          <p style={{ fontSize: '1.05rem', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.6 }}>
+          <p style={{ fontSize: '1.05rem', color: '#E2DFE9', lineHeight: 1.65 }}>
             Explore adorable miniature creations, playful characters, cute accessories, and handmade clay treasures. Each piece is hand-kneaded, sculpted with precision, oven-baked to durability, and lovingly hand-painted.
           </p>
         </div>

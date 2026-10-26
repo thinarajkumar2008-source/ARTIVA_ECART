@@ -38,28 +38,30 @@ const ArtDrawings = () => {
 
   return (
     <div className="art-drawings-page container" style={{ padding: '2.5rem 1.5rem 5rem 1.5rem' }}>
-      {/* Visual Category Banner */}
+      {/* Editorial Luxury Category Banner */}
       <div 
         style={{
-          background: 'linear-gradient(135deg, #FF6B9A 0%, #6C2BD9 100%)',
+          background: 'linear-gradient(135deg, #251638 0%, #432080 50%, #6428D9 100%)',
           borderRadius: '24px',
-          padding: '3rem 2.5rem',
+          padding: '3.5rem 2.5rem',
           color: '#FFFFFF',
           marginBottom: '2.5rem',
-          boxShadow: '0 16px 36px rgba(255, 107, 154, 0.25)',
+          boxShadow: '0 18px 45px rgba(37, 22, 56, 0.22)',
+          border: '1px solid rgba(217, 183, 121, 0.35)',
           position: 'relative',
           overflow: 'hidden'
         }}
       >
-        <div style={{ maxWidth: '640px', position: 'relative', zIndex: 2 }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255, 255, 255, 0.2)', padding: '0.3rem 0.8rem', borderRadius: '999px', fontSize: '0.8rem', fontWeight: 700, marginBottom: '1rem' }}>
-            <Palette size={15} /> Fine Art & 3D Illustration Studio
+        <div style={{ maxWidth: '680px', position: 'relative', zIndex: 2 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(217, 183, 121, 0.18)', border: '1px solid rgba(217, 183, 121, 0.45)', color: '#FFF2D1', padding: '0.35rem 0.95rem', borderRadius: '999px', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+            <Palette size={14} color="#D9B779" />
+            <span>Curated Fine Art & Illustration · {artProducts.length} Originals</span>
           </div>
-          <h1 style={{ fontSize: '2.6rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.15, marginBottom: '0.8rem' }}>
+          <h1 className="font-editorial" style={{ fontSize: '2.8rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.15, marginBottom: '0.9rem' }}>
             Art & Drawings Collection
           </h1>
-          <p style={{ fontSize: '1.05rem', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.6 }}>
-            Explore expressive graphite sketches, vivid colored pencil portraits, and intricate botanical studies hand-drawn on premium archival textured paper.
+          <p style={{ fontSize: '1.05rem', color: '#E2DFE9', lineHeight: 1.65 }}>
+            Explore expressive graphite sketches, vivid colored pencil portraits, and intricate botanical studies hand-drawn on premium archival textured cotton paper.
           </p>
         </div>
       </div>

@@ -25,11 +25,11 @@ const Favorites = () => {
     <div className="favorites-page container" style={{ padding: '2.5rem 1.5rem 5rem 1.5rem' }}>
       <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1rem' }}>
         <div>
-          <span className="section-tag" style={{ color: '#FF6B9A' }}>Your Wishlist</span>
-          <h1 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#27213C' }}>
+          <span className="section-tag text-gold">Your Wishlist</span>
+          <h1 className="font-editorial" style={{ fontSize: '2.8rem', fontWeight: 700, color: 'var(--midnight-plum)' }}>
             Saved Favorites ({favorites.length})
           </h1>
-          <p style={{ color: '#777386', fontSize: '0.95rem', marginTop: '0.25rem' }}>
+          <p style={{ color: 'var(--muted-slate)', fontSize: '1rem', marginTop: '0.25rem' }}>
             Artworks and clay creations you've earmarked for later inspiration or gift-giving.
           </p>
         </div>

@@ -97,48 +97,48 @@ const QuickViewModal = ({ product, isOpen, onClose }) => {
           {/* Details */}
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
-              <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#FF6B9A', textTransform: 'uppercase' }}>
+              <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--royal-violet)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 {product.subcategory || product.category}
               </span>
-              <h2 style={{ fontSize: '1.5rem', fontWeight: 800, margin: '0.3rem 0 0.6rem 0', color: '#27213C' }}>
+              <h2 className="font-editorial" style={{ fontSize: '1.75rem', fontWeight: 700, margin: '0.35rem 0 0.65rem 0', color: 'var(--midnight-plum)', lineHeight: 1.25 }}>
                 {product.name}
               </h2>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', color: '#F59E0B' }}>
-                  <Star size={15} fill="#F59E0B" />
-                  <span style={{ fontWeight: 700, fontSize: '0.88rem' }}>{product.rating || 4.9}</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', color: 'var(--champagne-gold)' }}>
+                  <Star size={15} fill="var(--champagne-gold)" />
+                  <span style={{ fontWeight: 700, fontSize: '0.88rem', color: 'var(--midnight-plum)' }}>{product.rating || 4.9}</span>
                 </div>
-                <span style={{ color: '#777386', fontSize: '0.82rem' }}>• {product.reviewsCount || 30} verified reviews</span>
+                <span style={{ color: 'var(--muted-slate)', fontSize: '0.82rem' }}>• {product.reviewsCount || 30} verified reviews</span>
                 <span className={`badge ${product.stock > 3 ? 'badge-stock-in' : 'badge-stock-low'}`}>
                   {product.stock > 0 ? `${product.stock} in stock` : 'Out of stock'}
                 </span>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.75rem', marginBottom: '1.25rem' }}>
-                <span style={{ fontSize: '1.75rem', fontWeight: 800, color: '#6C2BD9' }}>
+                <span style={{ fontSize: '1.85rem', fontWeight: 800, color: 'var(--royal-violet)' }}>
                   {formatPrice(product.price)}
                 </span>
                 {product.originalPrice && (
-                  <span style={{ textDecoration: 'line-through', color: '#A09DAE', fontSize: '1.05rem' }}>
+                  <span style={{ textDecoration: 'line-through', color: 'var(--text-muted)', fontSize: '1.05rem' }}>
                     {formatPrice(product.originalPrice)}
                   </span>
                 )}
               </div>
 
-              <p style={{ fontSize: '0.92rem', color: '#777386', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+              <p style={{ fontSize: '0.92rem', color: 'var(--muted-slate)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                 {product.description}
               </p>
 
               {/* Material & Dimensions */}
-              <div style={{ background: '#FFF9F5', padding: '0.85rem 1rem', borderRadius: '10px', fontSize: '0.82rem', marginBottom: '1.5rem', border: '1px solid #EFE7E2' }}>
-                <div style={{ marginBottom: '0.25rem' }}>
-                  <strong style={{ color: '#27213C' }}>Material: </strong>
-                  <span>{product.material || 'Artisan handmade medium'}</span>
+              <div style={{ background: 'var(--warm-ivory)', padding: '0.95rem 1.15rem', borderRadius: '12px', fontSize: '0.84rem', marginBottom: '1.5rem', border: '1px solid var(--border-color)' }}>
+                <div style={{ marginBottom: '0.35rem' }}>
+                  <strong style={{ color: 'var(--midnight-plum)' }}>Material: </strong>
+                  <span style={{ color: 'var(--muted-slate)' }}>{product.material || 'Artisan handmade medium'}</span>
                 </div>
                 <div>
-                  <strong style={{ color: '#27213C' }}>Dimensions: </strong>
-                  <span>{product.dimensions || 'Custom crafted dimensions'}</span>
+                  <strong style={{ color: 'var(--midnight-plum)' }}>Dimensions: </strong>
+                  <span style={{ color: 'var(--muted-slate)' }}>{product.dimensions || 'Custom crafted dimensions'}</span>
                 </div>
               </div>
             </div>
@@ -170,8 +170,8 @@ const QuickViewModal = ({ product, isOpen, onClose }) => {
                   className="btn btn-primary"
                   onClick={handleAddToCart}
                 >
-                  <ShoppingBag size={18} />
-                  <span>Add to Cart</span>
+                  <ShoppingBag size={17} />
+                  <span>Add to Bag</span>
                 </button>
 
                 <button
@@ -180,7 +180,7 @@ const QuickViewModal = ({ product, isOpen, onClose }) => {
                   onClick={handleBuyNow}
                 >
                   <span>Buy Now</span>
-                  <ArrowRight size={18} />
+                  <ArrowRight size={17} />
                 </button>
               </div>
 
@@ -193,7 +193,7 @@ const QuickViewModal = ({ product, isOpen, onClose }) => {
                   gap: '0.4rem',
                   fontSize: '0.88rem',
                   fontWeight: 600,
-                  color: '#6C2BD9'
+                  color: 'var(--royal-violet)'
                 }}
               >
                 <span>View Full Product Page & Specifications</span>

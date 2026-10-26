@@ -188,17 +188,17 @@ const ProductDetails = () => {
             </button>
           </div>
 
-          <h1 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#27213C', lineHeight: 1.2, marginBottom: '0.75rem' }}>
+          <h1 className="font-editorial" style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--midnight-plum)', lineHeight: 1.15, marginBottom: '0.85rem' }}>
             {product.name}
           </h1>
 
           {/* Ratings & Stock */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', color: '#F59E0B' }}>
-              <Star size={16} fill="#F59E0B" />
-              <span style={{ fontWeight: 800, fontSize: '0.95rem' }}>{product.rating || 4.9}</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', color: 'var(--champagne-gold)' }}>
+              <Star size={16} fill="var(--champagne-gold)" />
+              <span style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--midnight-plum)' }}>{product.rating || 4.9}</span>
             </div>
-            <span style={{ color: '#777386', fontSize: '0.85rem' }}>• {product.reviewsCount || 34} customer reviews</span>
+            <span style={{ color: 'var(--muted-slate)', fontSize: '0.85rem' }}>• {product.reviewsCount || 34} customer reviews</span>
             <span className={`badge ${product.stock > 3 ? 'badge-stock-in' : 'badge-stock-low'}`}>
               <CheckCircle2 size={13} />
               {product.stock > 0 ? `${product.stock} units available` : 'Out of stock'}
@@ -206,13 +206,13 @@ const ProductDetails = () => {
           </div>
 
           {/* Price & Discounts */}
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '1.5rem', paddingBottom: '1.25rem', borderBottom: '1px solid #EFE7E2' }}>
-            <span style={{ fontSize: '2.2rem', fontWeight: 800, color: '#6C2BD9' }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', marginBottom: '1.5rem', paddingBottom: '1.25rem', borderBottom: '1px solid var(--border-color)' }}>
+            <span style={{ fontSize: '2.4rem', fontWeight: 800, color: 'var(--royal-violet)' }}>
               {formatPrice(product.price)}
             </span>
             {product.originalPrice && product.originalPrice > product.price && (
               <>
-                <span style={{ textDecoration: 'line-through', color: '#A09DAE', fontSize: '1.2rem' }}>
+                <span style={{ textDecoration: 'line-through', color: 'var(--text-muted)', fontSize: '1.2rem' }}>
                   {formatPrice(product.originalPrice)}
                 </span>
                 <span className="badge badge-discount" style={{ fontSize: '0.85rem' }}>
@@ -220,7 +220,7 @@ const ProductDetails = () => {
                 </span>
               </>
             )}
-            <span style={{ fontSize: '0.8rem', color: '#777386' }}>(Inclusive of all taxes)</span>
+            <span style={{ fontSize: '0.8rem', color: 'var(--muted-slate)' }}>(Inclusive of all taxes)</span>
           </div>
 
           {/* Description */}

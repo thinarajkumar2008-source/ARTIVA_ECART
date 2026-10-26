@@ -126,11 +126,13 @@ const Shop = () => {
     <div className="shop-page container" style={{ padding: '2.5rem 1.5rem 5rem 1.5rem' }}>
       {/* Page Title & Breadcrumb Header */}
       <div style={{ marginBottom: '2.5rem' }}>
-        <span className="section-tag" style={{ color: '#6C2BD9' }}>ARTIVA Marketplace</span>
-        <h1 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#27213C', marginTop: '0.2rem' }}>
+        <span className="section-tag text-gold" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+          <Sparkles size={14} /> Complete Artisan Catalog
+        </span>
+        <h1 className="font-editorial" style={{ fontSize: '2.8rem', fontWeight: 700, color: 'var(--midnight-plum)', marginTop: '0.25rem' }}>
           Explore All Art & Handmade Creations
         </h1>
-        <p style={{ color: '#777386', fontSize: '1rem', marginTop: '0.4rem', maxWidth: '700px' }}>
+        <p style={{ color: 'var(--muted-slate)', fontSize: '1.05rem', marginTop: '0.4rem', maxWidth: '720px', lineHeight: 1.6 }}>
           Discover {PRODUCTS.length} original pieces ranging from fine graphite drawings and acrylic canvases to miniature clay friends, lucky charms, and designer desk pens.
         </p>
       </div>

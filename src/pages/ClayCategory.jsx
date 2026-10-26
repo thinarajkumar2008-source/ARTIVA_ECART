@@ -86,22 +86,24 @@ const ClayCategory = ({ type }) => {
         style={{
           background: config.gradient,
           borderRadius: '24px',
-          padding: '3rem 2.5rem',
+          padding: '3.5rem 2.5rem',
           color: '#FFFFFF',
           marginBottom: '3rem',
-          boxShadow: '0 16px 36px rgba(108, 43, 217, 0.2)',
+          boxShadow: '0 18px 45px rgba(37, 22, 56, 0.22)',
+          border: '1px solid rgba(217, 183, 121, 0.35)',
           position: 'relative',
           overflow: 'hidden'
         }}
       >
         <div style={{ maxWidth: '650px', position: 'relative', zIndex: 2 }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(255, 255, 255, 0.25)', padding: '0.3rem 0.8rem', borderRadius: '999px', fontSize: '0.8rem', fontWeight: 700, marginBottom: '1rem' }}>
-            <Sparkles size={15} /> {config.badge}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', background: 'rgba(217, 183, 121, 0.22)', border: '1px solid rgba(217, 183, 121, 0.5)', color: '#FFF2D1', padding: '0.35rem 0.95rem', borderRadius: '999px', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
+            <Sparkles size={14} color="#D9B779" />
+            <span>{config.badge} · {products.length} Handmade Pieces</span>
           </div>
-          <h1 style={{ fontSize: '2.6rem', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.15, marginBottom: '0.8rem' }}>
+          <h1 className="font-editorial" style={{ fontSize: '2.8rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.15, marginBottom: '0.9rem' }}>
             {config.title}
           </h1>
-          <p style={{ fontSize: '1.05rem', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.6 }}>
+          <p style={{ fontSize: '1.05rem', color: '#F4F0FB', lineHeight: 1.65 }}>
             {config.description}
           </p>
         </div>

@@ -210,10 +210,10 @@ const Checkout = () => {
   return (
     <div className="checkout-page container" style={{ padding: '2.5rem 1.5rem 5rem 1.5rem' }}>
       <div style={{ marginBottom: '2rem' }}>
-        <Link to="/shop" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: '#6C2BD9', fontWeight: 600, fontSize: '0.88rem' }}>
+        <Link to="/shop" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', color: 'var(--royal-violet)', fontWeight: 600, fontSize: '0.88rem' }}>
           <ArrowLeft size={15} /> Back to Catalog
         </Link>
-        <h1 style={{ fontSize: '2.4rem', fontWeight: 800, color: '#27213C', marginTop: '0.4rem' }}>
+        <h1 className="font-editorial" style={{ fontSize: '2.8rem', fontWeight: 700, color: 'var(--midnight-plum)', marginTop: '0.4rem' }}>
           Secure Checkout
         </h1>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: '#059669', fontSize: '0.85rem', fontWeight: 600, marginTop: '0.2rem' }}>

@@ -90,9 +90,9 @@ const ThreeDotMenu = ({ isOpen, onClose }) => {
             <img 
               src="/logo.png" 
               alt="ARTIVA" 
-              style={{ width: '32px', height: '32px', objectFit: 'cover', borderRadius: '8px', border: '1px solid #EFE7E2' }}
+              style={{ width: '32px', height: '32px', objectFit: 'cover', borderRadius: '8px', border: '1px solid var(--border-gold)' }}
             />
-            <span>ARTIVA Navigation</span>
+            <span className="font-editorial" style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--midnight-plum)' }}>ARTIVA Gallery</span>
           </div>
           <button 
             type="button" 
@@ -130,9 +130,9 @@ const ThreeDotMenu = ({ isOpen, onClose }) => {
         </div>
 
         {/* Drawer Footer Info */}
-        <div style={{ padding: '1rem 1.25rem', background: '#FFF9F5', borderTop: '1px solid #EFE7E2', fontSize: '0.8rem', color: '#777386' }}>
-          <p style={{ fontWeight: 600, color: '#27213C', marginBottom: '2px' }}>ARTIVA E-Cart</p>
-          <p>Discover Art. Collect Creativity. Share Happiness.</p>
+        <div style={{ padding: '1rem 1.25rem', background: 'var(--warm-ivory)', borderTop: '1px solid var(--border-color)', fontSize: '0.8rem', color: 'var(--muted-slate)' }}>
+          <p className="font-editorial" style={{ fontWeight: 700, color: 'var(--midnight-plum)', fontSize: '0.95rem', marginBottom: '2px' }}>ARTIVA</p>
+          <p>Art Beyond Imagination · Discover Art. Collect Creativity.</p>
         </div>
       </div>
     </div>
